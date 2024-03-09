@@ -1,0 +1,47 @@
+require('dotenv').config();
+const { API_KEY } = process.env;
+const {Videogames, Genre} = require('../db');
+const axios = require('axios');
+
+
+const getGameById = async (id) => {
+    if (isNaN(id)) {
+      let idByDB = await Videogames.findOne({
+        where: {
+          id: id,
+        },
+        include: {
+          model: Genre,
+          attributes: ['name'],
+          through: {
+            attributes: [],
+          },
+        }
+      });
+      if (!idByDB) {
+        throw new Error('No se encontró el juego con el id solicitado')
+      }
+      return idByDB;
+    }
+    else {
+  
+      const findById = await axios.get(
+        `https://api.rawg.io/api/games/${id}?key=${API_KEY}`,
+      )
+      if (!findById) {
+        throw new Error('No se encontró el juego con el id solicitado')
+      }
+      return {
+        id: findById.data.id,
+        name: findById.data.name,
+        description: findById.data.description,
+        released: findById.data.released,
+        rating: findById.data.rating,
+        img: findById.data.background_image,
+        platforms: findById.data.platforms.map((p) => p.platform.name),
+        genres: findById.data.genres.map((g) => g.name),
+      }
+    }
+  }
+
+  module.exports = getGameById;

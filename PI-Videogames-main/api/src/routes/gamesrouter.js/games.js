@@ -1,14 +1,11 @@
 const { Router } = require('express')
 const router = Router()
-const {
-  getAllGames,
-  getGameById,
-  getGameByName,
-  createGame,
-  editGame,
-  deleteGame,
-} = require('../../controllers/gamesControllers.js')
-
+const { getAllGames } = require('../../controllers/allgames.js')
+const getGameByName = require('../../controllers/getname.js')
+const getGameById = require('../../controllers/getgameId.js')
+const createGame = require('../../controllers/createGame.js')
+const editGame = require('../../controllers/editGame.js')
+const deleteGame = require('../../controllers/deleteGame.js')
 
 
 router.get('/', async (req, res) => {
