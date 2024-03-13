@@ -1,0 +1,26 @@
+/* src/components/LandingPage.css */
+.landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  
+  .content {
+    text-align: center;
+    color: white;
+  }
+  
+  button {
+    /* Estilos para el botón */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
