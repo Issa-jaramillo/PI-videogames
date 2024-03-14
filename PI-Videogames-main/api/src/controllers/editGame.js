@@ -31,7 +31,7 @@ const editGame = async (game, id) => {
             name: el,
           },
         });
-        const gameFinded = await Videogames.findOne({
+        const gameFinded = await videogames.findOne({
           where: {
             id: id,
           },

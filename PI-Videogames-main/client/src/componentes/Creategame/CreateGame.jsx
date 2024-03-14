@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getGenres, createVideoGame } from '../../actions/actions'
+import { getGenres, createVideoGame } from '../../actions/index'
+import { Link } from "react-router-dom";
 import styles from './create.module.css';
 
 
@@ -189,15 +190,14 @@ const CreateGame = () => {
   }
 
 
-
   return (
-    <div>
-      <div>
-        <h1>Create VideoGame</h1>
-        <h4>Fill in the following form:</h4>
+    <div className={styles.Crear}>
+      <div className={styles.formulario}>
+        <h1 className={styles.h1} >Create VideoGame</h1>
+        <h4 className={styles.h4}>Fill in the following form:</h4>
         <form autoComplete="off" onSubmit={(e) => handleSubmit(e)}>
           {/* --------------------------------------NAME---------------------------------------- */}
-          <div className={nameCss}>
+          <div>
             <h5>Name of the VideoGame:</h5>
             <input
               className={errors.name && 'danger'}
@@ -215,7 +215,7 @@ const CreateGame = () => {
           <div>
             <h5>Put the cover of the game:</h5>
             <input
-          
+              
               type='text'
               placeholder='Image Url...'
               name='image'
@@ -254,7 +254,7 @@ const CreateGame = () => {
             )}
           </div>
           {/* --------------------------------------RATING---------------------------------------- */}
-          <div>
+          <div >
             <h5>Raiting:</h5>
             <input
               className={errors.rating && 'danger'}
@@ -346,6 +346,9 @@ const CreateGame = () => {
             </ul>
           </div>
           <button  type='submit'>Create Videogame</button>
+          <Link to="/home">
+                <button>Volver a Home</button>
+            </Link>
         </form>
       </div>
     </div>

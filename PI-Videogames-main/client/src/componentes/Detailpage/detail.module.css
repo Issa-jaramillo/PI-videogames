@@ -1,0 +1,46 @@
+.detailContainer  {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../imagenes/detalles.jpg'); /* Reemplaza 'tu-imagen.jpg' con el nombre de tu imagen */
+    background-size: cover; /* Esto asegura que la imagen se ajuste al tamaño del contenedor */
+    background-position: center; /* Esto asegura que la imagen esté centrada en el contenedor */
+  }
+
+  .detailCard {
+    /* Estilos de tu tarjeta */
+    background-color: #6e6e9d; /* Colores similares a la card de home */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1400px; /* Ajusta el ancho máximo según sea necesario */
+    width: 80%; /* Modifica el ancho de la tarjeta según sea necesario */
+}
+
+
+.detailCard img {
+    /* Estilos de la imagen dentro de la tarjeta */
+    width: 200%;
+    max-width: 900px; /* Ajusta el tamaño máximo de la imagen según sea necesario */
+    height: auto;
+    margin-bottom: 20px; /* Espacio entre la imagen y otros elementos */
+}
+
+.detailCard h1 {
+    font-size: 3.5rem; /* Tamaño de fuente más grande para el título */
+}
+
+.detailCard h4 {
+    font-size: 2.6rem; /* Tamaño de fuente más grande para los subtítulos */
+}
+
+.detailCard h3 {
+    font-size: 2.8rem; /* Tamaño de fuente más grande para los detalles */
+}
+
+.detailCard p {
+    font-size: 2.6rem; /* Tamaño de fuente más grande para la descripción */
+}

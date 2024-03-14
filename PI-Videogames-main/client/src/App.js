@@ -1,27 +1,25 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import LandingPage from './componentes/Landingpage/LandingPage';
-import HomePage from './componentes/Homepage/Homepage';
-import Detail from './componentes/Detailpage/Detail';
-import Creategame from './componentes/Creategame/CreateGame'
+//Esta es la app es sí misma
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import LandingPage from './componentes/Landingpage/LandingPage.jsx';
+import Home from './componentes/Homepage/Home.jsx';
+import Details from './componentes/Detailpage/Details.jsx';
+import CreateGame from './componentes/Creategame/CreateGame.jsx';
+import EditVideoGame from './componentes/editGame/EditVideoGame.jsx';
 
-import './App.css';
-import CreateGame from "./componentes/Creategame/CreateGame";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Henry Videogames</h1>
-      <Router>
-
+    <Router>
+      <div style={{ textAlign: 'center' }}>
         <Switch>
-        <Route exact path="/home" component={HomePage} />
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/videogames/:id" component={Detail}></Route>
-        <Route exact path="CreateGame" component={Creategame}></Route>
-        <Route exact path=""></Route>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/videogames/:id" component={Details} />
+          <Route exact path="/createGame" component={CreateGame} />
+          <Route exact path="/editVideoGame/:id" component={EditVideoGame} />
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

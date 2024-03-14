@@ -1,0 +1,66 @@
+.Homepage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../imagenes/homepage.jpg'); /* Reemplaza 'tu-imagen.jpg' con el nombre de tu imagen */
+    background-size: cover; /* Esto asegura que la imagen se ajuste al tamaño del contenedor */
+    background-position: center; /* Esto asegura que la imagen esté centrada en el contenedor */
+  }
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; /* Espacio entre las tarjetas */
+}
+  .card {
+    margin: 10px;
+  }
+    /* Estilos para los botones */
+button, select {
+  margin-right: 20px;
+  background-color: #33c9d7; /* Color de fondo azul */
+  color: white; /* Color de texto blanco */
+  border: none; /* Sin borde */
+  cursor: pointer;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para los botones y opciones de filtrado cuando el cursor pasa sobre ellos */
+button:hover, select:hover {
+  background-color: #8c25b1; /* Color de fondo azul más oscuro */
+}
+
+/* Estilos para las opciones de filtrado */
+select {
+  font-size: 30px; /* Tamaño de fuente para las selecciones */
+  padding: 10px; /* Ajusta el espacio interno del cuadro desplegable */
+  height: 70px; /* Ajusta la altura del cuadro desplegable */
+  width: 400px;
+  border: 1px solid #007bff; /* Borde delgado azul */
+  border-radius: 5px; /* Bordes redondeados */
+  appearance: none; /* Quitar la apariencia nativa */
+  background-color: transparent; /* Fondo transparente */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-6-6h12z"/></svg>'); /* Icono de flecha hacia abajo */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  font-size: 40px;
+}
+
+/* Estilos para las opciones de filtrado cuando se despliega */
+select:focus, select:active {
+  outline: none; /* Quitar el contorno de enfoque */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra suave */
+  background-color: #8c25b1; /* Color de fondo azul más oscuro cuando el cuadro está activo */
+}
+
+.option {
+  font-size: 40px; /* Ajusta el tamaño de la fuente según tu preferencia */
+  color: white; /* Color de texto blanco */
+}
+ 
+
+  
+
+

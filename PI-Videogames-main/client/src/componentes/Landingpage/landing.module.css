@@ -1,26 +1,24 @@
-/* src/components/LandingPage.css */
-.landing-page {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
+.landingpage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../imagenes/pagina1.jpg'); /* Reemplaza 'tu-imagen.jpg' con el nombre de tu imagen */
+  background-size: cover; /* Esto asegura que la imagen se ajuste al tamaño del contenedor */
+  background-position: center; /* Esto asegura que la imagen esté centrada en el contenedor */
+}
 
-  
-  .content {
-    text-align: center;
-    color: white;
-  }
-  
-  button {
-    /* Estilos para el botón */
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
+.content {
+  text-align: center;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

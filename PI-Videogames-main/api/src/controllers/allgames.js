@@ -3,19 +3,20 @@ const {Videogames, Genre} = require('../db');
 require('dotenv').config();
 const { API_KEY } = process.env;
 
+
 const getGamesOnDb = async () => {
-    const gamesOnDb = await Videogames.findAll({
-        include: {
-            model: Genre, attributes: ['name'],
-            through: {
-                attributes: [],
-            },
-        },
-    })
-    if(gamesOnDb.lenght === 0){
-        throw new Error('No se encontraron juegos en la Db')
-    }
-    return gamesOnDb
+  const gamesOnDb = await Videogames.findAll({
+      include: {
+          model: Genre, attributes: ['name'],
+          through: {
+              attributes: [],
+          },
+      },
+  })
+  if(gamesOnDb.lenght === 0){
+      throw new Error('No se encontraron juegos en la Db')
+  }
+  return gamesOnDb
 }
 
 

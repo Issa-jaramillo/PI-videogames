@@ -12,3 +12,5 @@ export const MODIFY_GAME = 'MODIFY_GAME'; //PUT - FORMULARIO
 export const DELETED_GAME = 'DELETED_GAME';
 export const DELETE_STATES = 'DELETE_STATES'
 
+
+

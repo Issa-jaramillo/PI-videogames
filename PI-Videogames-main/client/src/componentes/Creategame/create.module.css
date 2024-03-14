@@ -1,148 +1,103 @@
-.backgroundImage {
+/* Estilos para el contenedor principal */
+.Crear {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background-image: url('../../imagenes/crear.jpg');
     background-size: cover;
-
-    height: 100%;
+    background-position: center;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Estilos para el contenedor del formulario */
+.Crear .formulario {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     width: 50%;
-    height: 100%;
-    border-radius: 40px;
-    background: rgba(3, 3, 25, 0.4);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(8.5px);
-    -webkit-backdrop-filter: blur(8.5px);
-    border-radius: 20px;
-    border: ridge #e60073;
-    margin-top: none;
-    margin: 1%;
-    color: white;
+    max-width: 600px;
 }
 
-.inputForm {
-    margin: 10px;
+/* Estilos específicos del formulario (descomenta según sea necesario) */
+
+.Crear .formulario h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-h1 {
-    font-family: 'My Font Name';
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    -webkit-animation: glow 1000s ease-in-out infinite alternate;
-    -moz-animation: glow 1000s ease-in-out infinite alternate;
-    animation: glow 1000s ease-in-out infinite alternate;
-}
-
-.container h4 {
-    font-family: 'My Font Name';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 7px;
-    text-shadow: 1px 1px 2px black;
-    text-decoration: underline;
-}
-
-
-
-.container h5 {
-    font-family: 'Courier New', Courier, monospace;
-    margin: 5px;
+.Crear .formulario h4 {
     font-size: 20px;
-    -webkit-animation: glow 1000s ease-in-out infinite alternate;
-    -moz-animation: glow 1000s ease-in-out infinite alternate;
-    animation: glow 1000s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.container input {
-    width: 200px;
-    height: 30px;
-    margin: 7px;
-    background-color: black;
+.Crear .formulario input[type='text'],
+.Crear .formulario input[type='date'],
+.Crear .formulario button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
 }
 
-.nameCss {
-    margin: 10px
+.Crear .formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    resize: none;
 }
 
-.raiting {
-    margin: 10px
+.Crear .formulario button {
+    cursor: pointer;
+    background-color: #ff5252;
+    transition: background-color 0.3s ease;
 }
 
-select {
-    background-color: black;
-    width: 150px;
-    height: 25px;
+.Crear .formulario button:hover {
+    background-color: #ff1744;
 }
 
-li {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-
-
+.Crear .formulario .error {
+    color: #ff5252;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
-.deleteBtn {
-    margin: 5px;
-    height: 20px;
-    width: 20px;
-    border-radius: 100px;
-    border-color: #270e97;
-
+.Crear .formulario .list {
+    list-style: none;
+    padding: 0;
 }
 
-.deleteBtn:hover {
-    background-color: rgb(24, 9, 90);
-    -webkit-animation: glow 1000s ease-in-out infinite alternate;
-    -moz-animation: glow 1000s ease-in-out infinite alternate;
-    animation: glow 1000s ease-in-out infinite alternate;
-
+.Crear .formulario .list li {
+    margin-bottom: 5px;
 }
 
-
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 20px #e60073, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 30px #e60073;
-    }
-
-    to {
-        text-shadow: 0 0 5px #fff, 0 0 7px #cc40d9, 0 0 30px #cc40d9, 0 0 60px #cc40d9;
-
-    }
+.Crear .formulario .list li button {
+    margin-left: 10px;
+    background-color: #ff5252;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
-.createGameBtn {
-    background-color: transparent;
-    font-family: 'My Font Name';
-    font-size: 15px;
-    width: 250px;
-    height: 30px;
-    -webkit-animation: glow 1000s ease-in-out infinite alternate;
-    -moz-animation: glow 1000s ease-in-out infinite alternate;
-    animation: glow 1000s ease-in-out infinite alternate;
-    border-radius: 2rem;
-    margin: 10px;
-    color: white; 
+.Crear .formulario .list li button:hover {
+    background-color: #ff1744;
 }
 
-.createGameBtn:hover {
-    opacity: 1;
-    background-color: #e60073;
-}

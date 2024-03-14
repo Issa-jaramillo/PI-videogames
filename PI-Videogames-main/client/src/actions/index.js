@@ -14,7 +14,7 @@ import {
 
 const URL = 'http://localhost:3001/videogames';
 
-export const getAllvideoGames = () => {
+export const getAllVideoGames = () => {
     return async function (dispatch) {
       try {
         let response = await axios.get(`${URL}`);
@@ -28,7 +28,7 @@ export const getAllvideoGames = () => {
 
     }}
 
-export const getDetailVideogame = (id) => {
+export const getDetailVideoGame = (id) => {
     return async function (dispatch) {
         try {
         let response = await axios.get(`${URL}/${id}`)
@@ -45,7 +45,7 @@ export const getDetailVideogame = (id) => {
 }
 
 
-export const getVideogameByname = (name) => {
+export const getVideogameByName = (name) => {
     return async function (dispatch) {
         try {
         let response = await axios.get(`${URL}/name?name=${name}`)
@@ -107,7 +107,7 @@ export const createVideoGame = (payload) => {
 }
 
 
-export const deleteVideogame = (id) => {
+export const deleteVideoGame = (id) => {
     return async function (dispatch) {
         try {
             let response = await axios.delete(`${URL}/${id}`)
@@ -149,7 +149,10 @@ export const filterByGenres = (payload) => {
 }
 
 
-export const getVideogamesByOrigin = (payload) => {
+export const getVideoGamesByOrigin = (payload) => {
+    // Asegúrate de que la acción se esté despachando correctamente
+console.log("Payload de la acción GET_VIDEOGAMES_BY_ORIGIN:", payload);
+
    return {
     type: GET_VIDEOGAMES_BY_ORIGIN,
     payload

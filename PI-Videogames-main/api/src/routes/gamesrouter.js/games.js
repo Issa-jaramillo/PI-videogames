@@ -27,17 +27,22 @@ router.get('/', async (req, res) => {
         return res.status(400).json({ error: 'El parámetro "name" es requerido.' });
       }
   
+      // Obtener los juegos por nombre
       const games = await getGameByName(name);
   
       if (games.length === 0) {
         return res.status(404).json({ error: 'No se encontraron videojuegos con el nombre proporcionado.' });
       }
   
-      res.status(200).json(games.slice(0, 15)); // Devuelve los primeros 15 juegos
+      // Devolver los primeros 15 juegos
+      res.status(200).json(games.slice(0, 15));
     } catch (error) {
+      // Manejar errores
+      console.error('Error al buscar videojuegos por nombre:', error);
       res.status(500).json({ error: 'Error al buscar videojuegos por nombre.' });
     }
   });
+  
 
 
 
