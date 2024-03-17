@@ -4,21 +4,45 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('../../imagenes/pagina1.jpg'); /* Reemplaza 'tu-imagen.jpg' con el nombre de tu imagen */
-  background-size: cover; /* Esto asegura que la imagen se ajuste al tamaño del contenedor */
-  background-position: center; /* Esto asegura que la imagen esté centrada en el contenedor */
+  background-image: url('../../imagenes/pagina1.jpg');
+  background-size: cover; 
+  background-position: center; 
 }
 
+
+ 
 .content {
   text-align: center;
-  color: white;
+} 
+
+.title {
+  margin: 0;
+  font-size: 7rem; 
+  font-family: 'Roboto', sans-serif; 
+  color: #1c94d0; 
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
+.subtitle {
+  font-size: 5rem;
+  font-family: 'Roboto', sans-serif; 
+  color: #1c94d0; 
+  margin-bottom: 2rem;
+}
+
+.button {
+  padding: 2rem 9rem; 
+  font-size: 3.9rem;
+  background-color: #000000;
+  color: #be14e0;
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  margin-top: 25rem; 
+
+}
+
+
+.button:hover {
+  background-color: #0f86e6; 
 }

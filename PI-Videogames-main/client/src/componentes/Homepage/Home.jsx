@@ -3,16 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Card from "../Card/Card.jsx";
 import Loading from "../Loading/Loading.jsx";
+import Filter from "../Filters/Filters.jsx"
 import styles from './Home.module.css';
 import {
     getAllVideoGames,
     getGenres,
-    filterByGenres,
     getVideogameByName,
-    getVideoGamesByOrigin,
-    orderAlphabetically,
-    orderByRating,
-    deleteStates,
 } from '../../actions/index.js';
 
 //Components
@@ -22,10 +18,7 @@ const Home = () => {
     // ------ PAGINADO -------
     const dispatch = useDispatch();
     const allVideogames = useSelector((state) => state.videogames);
-    // Dentro del componente, verifica el estado al que estás suscrito
-console.log("Estado actual en el componente:", allVideogames);
-
-    const genres = useSelector((state) => state.genres);
+    
     //Estado de la página: 
     const [currentPage, setCurrentPage] = useState(1);
     const [videoGamesPP,] = useState(15);
@@ -51,34 +44,11 @@ console.log("Estado actual en el componente:", allVideogames);
     };
 
     //--------------------------
-    const [isHiden, setIsHiden] = useState(false);
+    // const [isHiden, setIsHiden] = useState(false);
     const [search, setSearch] = useState({ //input de busqueda
         name: '',
     });
 
-    const handleOrderAlphabetically = (e) => {
-        e.preventDefault()
-        dispatch(orderAlphabetically(e.target.value))
-        setCurrentPage(1)
-    };
-    
-    const handleOrderRating = (e) => {
-        e.preventDefault()
-        dispatch(orderByRating(e.target.value))
-        setCurrentPage(1)
-    };
-    
-    const handleFilterGenres = (e) => {
-        e.preventDefault()
-        dispatch(filterByGenres(e.target.value))
-        setCurrentPage(1)
-    };
-    
-    const handleGetVideoGamesByOrigin = (e) => {
-        e.preventDefault()
-        dispatch(getVideoGamesByOrigin(e.target.value));
-        setCurrentPage(1)
-    };
     
     const handleChange = (e) => {
         e.preventDefault()
@@ -96,10 +66,6 @@ console.log("Estado actual en el componente:", allVideogames);
         setCurrentPage(1)
     };
     
-    const handleClearFilters = (e) => {
-        dispatch(deleteStates()); // Eliminar los estados de los filtros
-        setSearch({ name: '' }); // Limpiar el estado de búsqueda
-    };
     
 
     const handleNextPage = () => {
@@ -114,55 +80,39 @@ console.log("Estado actual en el componente:", allVideogames);
         <>
             <div className={styles.Homepage}>
                 <nav>
-
-                    <select className={styles.select} onChange={(e) => { handleOrderAlphabetically(e) }}>
-                        <option>Order</option>
-                        <option value="asc">A-Z</option>
-                        <option value="desc">Z-A</option>
-                    </select>
-
-                    <select className={styles.select} onChange={(e) => handleOrderRating(e)}>
-                        <option>Rating</option>
-                        <option value="max">More Popular</option>
-                        <option value="min">Less popular</option>
-                    </select>
-
-                    <select className={styles.select} onChange={(e) => handleFilterGenres(e)} defaultValue={'default'}>
-                        <option value="default" disabled>Genres</option>
-                        {genres?.map((el, i) => {
-                            return (
-                                <option key={i} value={el}>
-                                    {el}
-                                </option>
-                            )
-                        })
-                        }
-                    </select>
-
-                    <select className={styles.select} onChange={(e) => { handleGetVideoGamesByOrigin(e) }}>
-                        <option>Filter</option>
-                        <option value="All">All Games</option>
-                        <option value="Created">My Games</option>
-                        <option value="From Api">Api Games</option>
-                    </select>
-
-                    <button onClick={e => handleClearFilters(e)}>Clear Filters/Refresh</button>
-
-                    <Link to="/createGame">
-                        <button >Create VideoGame</button>
-                    </Link>
+                <Filter setCurrentPage={setCurrentPage} />
                 </nav>
-                <div>
-                    <input 
-                        autoComplete="off"
-                        type="text"
-                        placeholder="Search Videgame..."
-                        name='name'
-                        value={search.name}
-                        onChange={(e) => handleChange(e)}
-                    />
-                    <button onClick={(e) => handleSearch(e)}>Search</button>
-                </div>
+
+                <div className={`${styles.header} ${styles.headerWithCreateButton}`}>
+
+                <Link to="/">
+                    <button className={styles.salirButton}>Salir</button>
+                </Link>
+                
+                <Link to="/createGame">
+                        <button className={styles.createButton}>Create Videogame</button>
+                </Link>
+
+
+
+
+                   <div className={styles.searchContainer}>
+                  <input
+                    className={styles.searchInput}
+                    autoComplete="off"
+                    type="text"
+                    placeholder="Search Videogame..."
+                    name="name"
+                   value={search.name}
+                   onChange={(e) => handleChange(e)}
+                   />
+              <button className={styles.searchButton} onClick={(e) => handleSearch(e)}> Search </button>
+               </div>
+            
+
+          
+            </div>
+
                 <div style={{ marginTop: "80" }}>
                     <div className={styles.cardContainer}>
 

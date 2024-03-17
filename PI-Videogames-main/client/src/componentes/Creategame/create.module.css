@@ -1,4 +1,4 @@
-/* Estilos para el contenedor principal */
+
 .Crear {
     height: 100vh;
     display: flex;
@@ -10,94 +10,98 @@
     background-position: center;
 }
 
-/* Estilos para el contenedor del formulario */
+
 .Crear .formulario {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    max-width: 600px;
+    background-color: #693ea5;
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1300px;
+ 
 }
 
-/* Estilos específicos del formulario (descomenta según sea necesario) */
 
 .Crear .formulario h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.Crear .formulario h4 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 64px; 
+    margin-bottom: 40px;
     text-align: center;
 }
 
 .Crear .formulario input[type='text'],
 .Crear .formulario input[type='date'],
-.Crear .formulario button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    font-size: 16px;
-}
-
 .Crear .formulario textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    font-size: 16px;
-    resize: none;
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 40px; 
+}
+
+
+.Crear .formulario button.deleteButton {
+    width: 5%;
+    padding: 8px; 
+    font-size: 20px; 
+  }
+
+.Crear .formulario button:hover {
+    background-color: #0056b3;
 }
 
 .Crear .formulario button {
-    cursor: pointer;
-    background-color: #ff5252;
-    transition: background-color 0.3s ease;
+    width: 20%;
+    padding: 15px; 
+    font-size: 24px; 
 }
 
-.Crear .formulario button:hover {
-    background-color: #ff1744;
+.Crear .formulario .lista .result button {
+    font-size: 20px; 
+    padding: 5px 10px;
 }
+
+.Crear .formulario .lista .result li {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 24px; 
+  }
+  
+  .Crear .formulario .Genres,
+  .Crear .formulario .Platforms {
+    font-size: 24px; 
+    padding: 15px; 
+    border: 2px solid #ccc; 
+    border-radius: 10px;
+    background-color: #f9f9f9; 
+    color: #333;
+}
+
 
 .Crear .formulario .error {
-    color: #ff5252;
-    font-size: 14px;
-    margin-top: -10px;
+    color: #ff5252; 
+    font-size: 28px; 
+    margin-top: 5px; 
     margin-bottom: 10px;
 }
 
-.Crear .formulario .list {
-    list-style: none;
-    padding: 0;
-}
 
-.Crear .formulario .list li {
-    margin-bottom: 5px;
-}
 
-.Crear .formulario .list li button {
-    margin-left: 10px;
-    background-color: #ff5252;
-    border: none;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 14px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
+.inputLabel {
+    font-size: 2.2rem; 
+    margin-bottom: 10px;
+  }
+   
 
-.Crear .formulario .list li button:hover {
-    background-color: #ff1744;
-}
+  .Crear .formulario input[name='rating'] {
+    font-size: 33px; 
+    padding: 10px;
+    width: 20%;
+  }
+  
+ 
+  
 
+  

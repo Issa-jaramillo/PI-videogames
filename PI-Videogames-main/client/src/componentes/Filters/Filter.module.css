@@ -1,0 +1,51 @@
+select {
+    font-size: 30px; 
+    padding: 10px; 
+    height: 70px; 
+    width: 400px;
+    border: 1px solid #007bff; 
+    border-radius: 5px; 
+    appearance: none; 
+    background-color: transparent; 
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-6-6h12z"/></svg>'); 
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    font-size: 40px;
+  }
+
+select:focus, select:active {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  background-color: #8c25b1; 
+}
+
+
+button:hover, select:hover {
+    background-color: #8c25b1; 
+  }
+
+nav {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+
+select, button {
+  margin-right: 20px;
+  background-color: #33c9d7; 
+  color: white; 
+  border: none; 
+  cursor: pointer;
+  border-radius: 5px; 
+}
+
+.clearButton {
+  font-size: 30px;
+  padding: 18px 35px; /* Ajusta el padding para aumentar el tamaño del botón */
+  border-radius: 5px; 
+  margin-bottom: 0px; /* Ajusta el margen inferior para alinear con los filtros */
+}
+
+  
+ 
+  
+  

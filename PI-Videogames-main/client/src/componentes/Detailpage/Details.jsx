@@ -41,7 +41,8 @@ const Details = (props) => {
                         src={detailVideoGame?.image}
                         alt='imagen'
                     />
-                    <h4>Released at: {(detailVideoGame?.releaseDate).slice(0, 10)}</h4>
+                  <h4>Released at: {detailVideoGame && detailVideoGame.releaseDate ? detailVideoGame.releaseDate.slice(0, 10) : "Unknown"}</h4>
+
                     <h4>Rating: {detailVideoGame?.rating}</h4>
                     <h4>Description:
                         <p dangerouslySetInnerHTML={{ __html: detailVideoGame?.description }}></p>
@@ -51,15 +52,16 @@ const Details = (props) => {
                         Genres: {detailVideoGame.genres?.map(el => el.name).join(' - ')}
                         
                     </h3>
+                    <Link to="/home">
+                <button className={styles.volverButton}>Volver a Home</button>
+            </Link>
                     
-                    {/* <Link to={`/editVideoGame/${detailVideoGame.id}`}>
-                        <button>Modify...</button>
-                        </Link> */}
+                
                     
          
 
 
-                    <button  onClick={(e) => handleDeleteGame(e)}>Delete game</button>
+                    <button className={styles.volverButton} onClick={(e) => handleDeleteGame(e)}>Delete game</button>
                 </div>
                 :
                 <div  className={styles.detailCard}>
@@ -76,7 +78,7 @@ const Details = (props) => {
                     <h3>Platforms: {detailVideoGame.platforms?.map(el => el).join(' - ')}</h3>
                     <h3>Genres: {detailVideoGame.genres?.map(el => el).join(' - ')}</h3>
                     <Link to="/home">
-                <button>Volver a Home</button>
+                <button className={styles.volverButton}>Volver a Home</button>
             </Link>
                 </div>
                 
