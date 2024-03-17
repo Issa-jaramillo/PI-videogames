@@ -87,7 +87,6 @@ const Filter = ({ setCurrentPage }) => {
 
                 <select  value={selectedOrigin} onChange={(e) => handleGetVideoGamesByOrigin(e)}>
                     <option>Filtrar</option>
-                    <option value="All">Todos los juegos</option>
                     <option value="Created">Mis juegos</option>
                     <option value="From Api">Juegos de la API</option>
                 </select>
