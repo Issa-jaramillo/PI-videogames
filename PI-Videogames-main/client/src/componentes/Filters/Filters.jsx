@@ -76,7 +76,7 @@ const Filter = ({ setCurrentPage }) => {
                     <option value="min">Menos popular</option>
                 </select>
 
-                <select  value={selectedGenre} onChange={(e) => handleFilterGenres(e)} defaultValue={'default'}>
+                <select  value={selectedGenre} onChange={(e) => handleFilterGenres(e)} >
                     <option >Géneros</option>
                     {genres?.map((el, i) => (
                         <option key={i} value={el}>
