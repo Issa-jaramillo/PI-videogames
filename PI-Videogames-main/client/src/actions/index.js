@@ -13,7 +13,7 @@ import {
 }  from './types';
 
 //const URL = 'http://localhost:3001/videogames';
-const URL = 'https://videogameska.onrender.com/';
+const URL = 'https://videogameska.onrender.com/videogames';
 
 
 //accion para todos los videogames
