@@ -3,6 +3,8 @@ const { API_KEY } = process.env;
 const axios = require('axios');
 const { getGamesOnDb } = require('./allgames');
 
+
+//obtener los videojuegos por nombre
 const getGameByName = async (name) => {
     try {
         let apiGames = await axios.get(
@@ -10,8 +12,11 @@ const getGameByName = async (name) => {
         );
 
         const dbGames = await getGamesOnDb();
+
+        
         let allGames = [...apiGames.data.results, ...dbGames];
 
+        // Filtro para obtener videojuegos por nombre, considerando mayúsculas y minúsculas
         let gamesNames = allGames.filter((el) =>
             el.name.toLowerCase().includes(name.toLowerCase())
         );
@@ -31,7 +36,7 @@ const getGameByName = async (name) => {
 
         return data;
     } catch (error) {
-        // Puedes manejar el error aquí o simplemente dejar que se propague hacia arriba.
+        
         throw error;
     }
 };

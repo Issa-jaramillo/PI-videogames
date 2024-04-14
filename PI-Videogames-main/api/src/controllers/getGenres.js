@@ -3,7 +3,7 @@ const { Genre } = require('../db')
 require('dotenv').config();
 const { API_KEY } = process.env;
 
-
+//obtener generos
 const getGenres = async () => {
   const response = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`)
   try {

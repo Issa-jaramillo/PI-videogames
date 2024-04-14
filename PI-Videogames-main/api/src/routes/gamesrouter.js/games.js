@@ -4,7 +4,6 @@ const { getAllGames } = require('../../controllers/allgames.js')
 const getGameByName = require('../../controllers/getname.js')
 const getGameById = require('../../controllers/getgameId.js')
 const createGame = require('../../controllers/createGame.js')
-const editGame = require('../../controllers/editGame.js')
 const deleteGame = require('../../controllers/deleteGame.js')
 
 
@@ -36,8 +35,9 @@ router.get('/', async (req, res) => {
   
       // Devolver los primeros 15 juegos
       res.status(200).json(games.slice(0, 15));
+      
     } catch (error) {
-      // Manejar errores
+      
       console.error('Error al buscar videojuegos por nombre:', error);
       res.status(500).json({ error: 'Error al buscar videojuegos por nombre.' });
     }
@@ -70,17 +70,6 @@ router.post('/', async (req, res) => {
   })
 
 
-
-  router.put('/:id', async (req, res) => {
-    try {
-      const editedGame = req.body
-      const { id } = req.params
-      const modified = await editGame(editedGame, id)
-      res.status(200).json(modified)
-    } catch (error) {
-      res.status(404).json({ error: error.message })
-    }
-  })
   
   router.delete('/:id', async (req, res) => {
     try {

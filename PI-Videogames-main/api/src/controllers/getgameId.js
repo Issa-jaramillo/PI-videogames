@@ -3,8 +3,10 @@ const { API_KEY } = process.env;
 const {Videogames, Genre} = require('../db');
 const axios = require('axios');
 
-
+//obtener juegos por id
 const getGameById = async (id) => {
+
+  // Verifica si el ID es un número
     if (isNaN(id)) {
       let idByDB = await Videogames.findOne({
         where: {
@@ -23,8 +25,13 @@ const getGameById = async (id) => {
       }
       return idByDB;
     }
+
+
+
+
     else {
-  
+  // Si el ID no es un número, busca en la api
+
       const findById = await axios.get(
         `https://api.rawg.io/api/games/${id}?key=${API_KEY}`,
       )
