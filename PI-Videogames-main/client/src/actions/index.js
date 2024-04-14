@@ -12,15 +12,24 @@ import {
     DELETE_STATES,
 }  from './types';
 
-const URL = 'http://localhost:3001/videogames';
+//const URL = 'http://localhost:3001/videogames';
+const URL = 'https://videogameska.onrender.com/';
 
+
+//accion para todos los videogames
 export const getAllVideoGames = () => {
+
+
     return async function (dispatch) {
+
       try {
+    //realizo una peticion get     
         let response = await axios.get(`${URL}`);
+        
         return dispatch({
             type: GET_ALL_VIDEOGAMES,
             payload: response.data
+
       })} catch (error) {
         console.error('Error al obtener los videogames', error);
         dispatch({ type: GET_ALL_VIDEOGAMES, payload: error });
@@ -28,6 +37,8 @@ export const getAllVideoGames = () => {
 
     }}
 
+
+//accion para obtener el detalle del videojuego por id    
 export const getDetailVideoGame = (id) => {
     return async function (dispatch) {
         try {
@@ -44,7 +55,7 @@ export const getDetailVideoGame = (id) => {
     }
 }
 
-
+//accion para obtener videojuegos por nombre
 export const getVideogameByName = (name) => {
     return async function (dispatch) {
         try {
@@ -61,7 +72,7 @@ export const getVideogameByName = (name) => {
     }
 }
 
-
+//accion para obtener los generos de videojuegos
 export const getGenres = (payload) => {
     return async function (dispatch) {
        try {
@@ -78,6 +89,8 @@ export const getGenres = (payload) => {
     }
 }
 
+
+//accion para crear un nuevo videjuego
 export const createVideoGame = (payload) => {
     return async function () {
         try {
@@ -106,7 +119,7 @@ export const createVideoGame = (payload) => {
     }
 }
 
-
+//accion para eliminar videojuego
 export const deleteVideoGame = (id) => {
     return async function (dispatch) {
         try {
@@ -123,6 +136,7 @@ export const deleteVideoGame = (id) => {
         }
     }
 }
+
 
 
 export const orderAlphabetically = (payload) => {
@@ -150,8 +164,7 @@ export const filterByGenres = (payload) => {
 
 
 export const getVideoGamesByOrigin = (payload) => {
-    // Asegúrate de que la acción se esté despachando correctamente
-console.log("Payload de la acción GET_VIDEOGAMES_BY_ORIGIN:", payload);
+ 
 
    return {
     type: GET_VIDEOGAMES_BY_ORIGIN,

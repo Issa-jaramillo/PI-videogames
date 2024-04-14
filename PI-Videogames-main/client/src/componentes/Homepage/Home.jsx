@@ -11,11 +11,11 @@ import {
     getVideogameByName,
 } from '../../actions/index.js';
 
-//Components
+
 import Paged from "../Paged/Paged.jsx";
 
 const Home = () => {
-    // ------ PAGINADO -------
+    
     const dispatch = useDispatch();
     const allVideogames = useSelector((state) => state.videogames);
     
@@ -43,9 +43,8 @@ const Home = () => {
         setCurrentPage(pageNumbers);
     };
 
-    //--------------------------
-    // const [isHiden, setIsHiden] = useState(false);
-    const [search, setSearch] = useState({ //input de busqueda
+
+    const [search, setSearch] = useState({ 
         name: '',
     });
 
@@ -60,7 +59,7 @@ const Home = () => {
         setCurrentPage(1)
     };
     
-    const handleSearch = (e) => { //se ejecuta cuando clickeo boton 'go!'
+    const handleSearch = (e) => { 
         e.preventDefault();
         dispatch(getVideogameByName(search.name))
         setCurrentPage(1)
@@ -86,7 +85,7 @@ const Home = () => {
                 <div className={`${styles.header} ${styles.headerWithCreateButton}`}>
 
                 <Link to="/">
-                    <button className={styles.salirButton}>Salir</button>
+                    <button className={styles.salirButton}>Sign ou</button>
                 </Link>
                 
                 <Link to="/createGame">
@@ -117,12 +116,15 @@ const Home = () => {
                     <div className={styles.cardContainer}>
 
                         {current && current.length > 0 ? current.map(el => {
+                            console.log(el);
                             return (
+                                
                                 <Link key={el.id} to={`/videogames/${el.id}`}>
                                     <Card
                                         className={styles.card}
                                         name={el.name}
                                         img={el.createdInDb ? el.image : el.img}
+                                        rating={el.rating}
                                         genres={el.createdInDb && el.genres ? 
                                             el.genres.map((genre) => genre.name).join(' ') :
                                             el.genres ? el.genres.join(' - ') : 'Unknown'

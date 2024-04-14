@@ -23,7 +23,7 @@ const Filter = ({ setCurrentPage }) => {
 
     const handleOrderAlphabetically = (e) => {
         e.preventDefault();
-        setSelectedOrder(e.target.value); // Actualizar el estado del filtro
+        setSelectedOrder(e.target.value); 
         dispatch(orderAlphabetically(e.target.value));
         setCurrentPage(1);
     };
@@ -52,7 +52,7 @@ const Filter = ({ setCurrentPage }) => {
 
     const handleClearFilters = (e) => {
         e.preventDefault();
-        dispatch(deleteStates()); // Eliminar los estados de los filtros
+        dispatch(deleteStates()); 
         setSelectedOrder('');
         setSelectedRating('');
         setSelectedOrigin('');
@@ -65,20 +65,20 @@ const Filter = ({ setCurrentPage }) => {
         <div>
             <nav className={styles.select}>
                 <select  value={selectedOrder} onChange={(e) => handleOrderAlphabetically(e)}>
-                    <option>Ordenar</option>
+                    <option>Sort</option>
                     <option value="asc">A-Z</option>
                     <option value="desc">Z-A</option>
                 </select>
 
                 <select  value={selectedRating} onChange={(e) => handleOrderRating(e)}>
                     <option>Rating</option>
-                    <option value="max">Más Popular</option>
-                    <option value="min">Menos popular</option>
+                    <option value="max">Less popular</option>
+                    <option value="min">More popular</option>
                 </select>
 
                 <select  value={selectedGenre} onChange={(e) => handleFilterGenres(e)} >
-                    <option >Géneros</option>
-                    {genres?.map((el, i) => (
+                    <option >Genres</option>
+                    {genres && genres?.map((el, i) => (
                         <option key={i} value={el}>
                             {el}
                         </option>
@@ -86,9 +86,9 @@ const Filter = ({ setCurrentPage }) => {
                 </select>
 
                 <select  value={selectedOrigin} onChange={(e) => handleGetVideoGamesByOrigin(e)}>
-                    <option>Filtrar</option>
-                    <option value="Created">Mis juegos</option>
-                    <option value="From Api">Juegos de la API</option>
+                    <option>Origin</option>
+                    <option value="Created">Videogames BD </option>
+                    <option value="From Api">Videogames API</option>
                 </select>
 
              

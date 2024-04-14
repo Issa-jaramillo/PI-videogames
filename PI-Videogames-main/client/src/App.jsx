@@ -1,4 +1,3 @@
-//Esta es la app es sí misma
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import LandingPage from '../src/componentes/Landingpage/LandingPage.jsx';
 import Home from './componentes/Homepage/Home.jsx';

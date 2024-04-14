@@ -1,5 +1,5 @@
 import React from "react";
-//import styles from 'paged.module.css';
+
 
 export default function Paged(props) {
     const { videoGamesPP, allvideogames, paged} = props;

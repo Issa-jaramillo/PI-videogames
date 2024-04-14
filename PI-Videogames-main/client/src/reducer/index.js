@@ -77,17 +77,17 @@ function rootReducer( state = initialstate, action){
             
 
                 case ORDER_BY_RAITING:
-                    const sortedVideogames = [...state.allVideogames]; // Copia el array de videojuegos para no mutar el estado original
+                    const sortedVideogames = [...state.allVideogames];
                     sortedVideogames.sort((a, b) => {
                         if (payload === 'max') {
-                            return b.rating - a.rating; // Ordena de mayor a menor calificación
+                            return b.rating - a.rating;
                         } else {
-                            return a.rating - b.rating; // Ordena de menor a mayor calificación
+                            return a.rating - b.rating; 
                         }
                     });
                     return {
                         ...state,
-                        videogames: sortedVideogames, // Actualiza el estado con los videojuegos ordenados
+                        videogames: sortedVideogames, 
                     };
                 
 
@@ -116,7 +116,7 @@ function rootReducer( state = initialstate, action){
                         return {
                             ...state,
                             videogames: filterMyGames,
-                            allVideogames: filterMyGames.slice() // Actualiza el estado de todos los videojuegos copiando el array filtrado
+                            allVideogames: filterMyGames.slice() 
                         };
                     
                     

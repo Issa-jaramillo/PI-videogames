@@ -63,7 +63,7 @@ const CreateGame = () => {
     ];
 
   useEffect(() => {
-    dispatch(getGenres()); //recibe la accion
+    dispatch(getGenres()); 
   }, [dispatch]);
 
   const [errors, setErrors] = useState({});
@@ -328,7 +328,7 @@ const hasSpecialCharacters = (text) => {
             <label >
               <h5 className={styles.inputLabel}> Choose a platform...</h5>
               <select
-                // className={errors.platforms && 'danger'}
+             
                 name='Platforms'
                 onChange={(e) => handleChangePlatform(e)}
                 defaultValue={'default'}
@@ -397,7 +397,7 @@ const hasSpecialCharacters = (text) => {
 
 
           <Link to="/home">
-                <button>Volver a Home</button>
+                <button>Back to Home</button>
             </Link>
         </form>
       </div>
