@@ -76,7 +76,7 @@ export const getVideogameByName = (name) => {
 export const getGenres = (payload) => {
     return async function (dispatch) {
        try {
-        let response = await axios.get(`http://localhost:3001/genres`, payload)
+        let response = await axios.get(`https://videogameska.onrender.com/`, payload)
         return dispatch({
             type: GET_GENRES,
             payload: response.data
