@@ -124,7 +124,6 @@ const Home = () => {
                                         className={styles.card}
                                         name={el.name}
                                         img={el.createdInDb ? el.image : el.img}
-                                        rating={el.rating}
                                         genres={el.createdInDb && el.genres ? 
                                             el.genres.map((genre) => genre.name).join(' ') :
                                             el.genres ? el.genres.join(' - ') : 'Unknown'
